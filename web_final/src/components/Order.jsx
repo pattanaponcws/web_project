@@ -18,7 +18,7 @@ function Order() {
         console.log(err);
       });
   };
-  const x=0;
+  
 //5555
   useEffect(() => {
     fetchOrder();
