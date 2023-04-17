@@ -11,6 +11,7 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<Cart> Carts { get; set; }
     public DbSet<Accept> Accepts { get; set; }
     public DbSet<Menu> Menus { get; set; }
     public DbSet<Post> Posts { get; set; }

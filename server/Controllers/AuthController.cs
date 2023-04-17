@@ -29,7 +29,7 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Authenticate([FromBody]UserCred userCred)
     {
         var user = await this._DbContext.Users.FirstOrDefaultAsync(item =>
-            item.Username == userCred.username || item.Email == userCred.username && item.Password == userCred.password);
+            (item.Username == userCred.username || item.Email == userCred.username) && item.Password == userCred.password);
         if (user == null)
             return Unauthorized();
         var tokenhandler = new JwtSecurityTokenHandler();

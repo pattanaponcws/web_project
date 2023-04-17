@@ -26,7 +26,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+builder.Services.AddHttpContextAccessor();
 
 var _jwtsettings = builder.Configuration.GetSection("JwtSettings");
 var _authkey = builder.Configuration.GetValue<string>("JwtSettings:securitykey");

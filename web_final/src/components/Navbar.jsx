@@ -1,12 +1,14 @@
 import { CgMenu, CgClose } from "react-icons/cg";
 import { MdFastfood } from "react-icons/md";
 import { useState } from "react";
+import { HiUser } from "react-icons/hi";
+import { HiShoppingCart } from "react-icons/hi";
 
 const Navbar= () => {
   const paths = [
     { key: 1, name: "Our services", path: "/Cart" },
     { key: 2, name: "Orders", path: "/restaurant" },
-    { key: 3, name: "Post", path: "/Signup" },
+    { key: 3, name: <HiShoppingCart/>, path: "/Signup" },
   ];
 
   let [open, setOpen] = useState(false);
@@ -38,7 +40,7 @@ const Navbar= () => {
             <li key={path.key} className="md:ml-7 md:my-0 my-7">
               <a
                 href={path.path}
-                className="text-teal-700 hover:text-teal-500 font-bold duration-500"
+                className="text-teal-700 hover:text-teal-500 text-xl font-bold duration-500"
               >
                 {path.name}
               </a>
@@ -46,8 +48,8 @@ const Navbar= () => {
           ))}
           <li className="md:ml-7 md:my-0 my-7">
             <a href="\Login">
-            <button className="font-bold bg-teal-700 text-white px-5 py-2 rounded-lg hover:bg-teal-500 duration-500">
-              Login
+            <button className="font-bold bg-teal-700 text-xl text-white px-5 py-2 rounded-lg hover:bg-teal-500 duration-500">
+            <HiUser/>
             </button>
             </a>
           </li>
