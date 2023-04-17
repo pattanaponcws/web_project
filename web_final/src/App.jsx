@@ -6,6 +6,7 @@ import Order from "./components/Order"
 import Home from "./components/Home"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Cart from "./components/Cart"
+import Post from "./components/Post"
 function App() {
  
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/restaurant/:id" element={<Order />} />
         <Route path="/Cart" element={<Cart/>} />
+        <Route path="/Post" element={<Post/>} />
       
         
       </Routes>

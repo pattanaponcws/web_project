@@ -1,17 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { BiChevronLeftCircle } from "react-icons/bi";
 
 function Restaurant() {
   const [rests, setRests] = useState([]);
 
   const fetchData = () => {
-    axios
-      ({
-        method : "get",
-        url : 'https://localhost:7057/api/restaurants',
-        headers : {"Content-Type" : "application/json"}
-      })
+    axios({
+      method: "get",
+      url: "https://localhost:7057/api/restaurants",
+      headers: { "Content-Type": "application/json" },
+    })
       .then((response) => {
         console.log(response.data);
         setRests(response.data);
@@ -58,6 +58,11 @@ function Restaurant() {
                 </div>
               </div>
             </div>
+            <a href="/">
+              <button className="fixed z-90 bottom-10 left-8 bg-amber-400 w-10 sm:w-14 h-10 sm:h-14 rounded-full flex justify-center items-center text-white text-2xl sm:text-4xl hover:bg-orange-600  duration-300">
+                <BiChevronLeftCircle />
+              </button>
+            </a>
           </div>
         ))}
       </div>
