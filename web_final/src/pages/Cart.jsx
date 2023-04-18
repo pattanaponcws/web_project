@@ -110,7 +110,7 @@ function Cart() {
                     {
                       menulsit.map((index,i)=>{
                         const temp= data.filter(x=>x.menu.menuId==index.menuId)
-                        console.log(temp);
+                        //console.log(temp);
                         let count=0;
                         for (let index = 0; index < temp.length; index++) {
                           count+=temp[index].countFood;
@@ -158,7 +158,7 @@ function Cart() {
           <div className="text-sm md:text-xl">Check Out</div>
         </button>
       </div>
-      <Checkout onClose={handleOnClose} visible={showCheck}/>
+      <Checkout cart={cart} restslsit={restslsit} menulsit={menulsit} onClose={handleOnClose} visible={showCheck}/>
     </div>
   );
 }

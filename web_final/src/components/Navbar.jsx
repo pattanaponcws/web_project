@@ -8,7 +8,7 @@ const Navbar= () => {
   const paths = [
     { key: 1, name: "Home", path: "/" },
     { key: 2, name: "Orders", path: "/restaurant" },
-    { key: 3, name: "Post", path: "/Mc" },
+    { key: 3, name: "Post", path: "/Rc" },
   ];
 
   let [open, setOpen] = useState(false);

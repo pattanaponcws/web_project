@@ -46,7 +46,7 @@ const Signup = () => {
   return (
     <div className=" pt-20 w-screen h-screen bg-login bg-cover flex justify-center items-center">
       <div className=" bg-amber-300  bg-opacity-60 w-[30rem] p-6 sm:p-16  rounded-2xl">
-        <div className=" flex justify-between pb-7">
+        <div className=" flex justify-between pb-3 sm:pb-7">
           <div>
             <div className=" flex text-xl font-bold gap-2 pb-1">
               <h2>🥔</h2>

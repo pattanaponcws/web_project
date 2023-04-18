@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace server.Migrations
 {
     /// <inheritdoc />
-    public partial class dbb : Migration
+    public partial class db : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -73,8 +73,6 @@ namespace server.Migrations
                 columns: table => new
                 {
                     PostId = table.Column<Guid>(type: "char(36)", nullable: false),
-                    CountFood = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<Guid>(type: "char(36)", nullable: false),
                     Status = table.Column<string>(type: "longtext", nullable: false)
                 },
@@ -139,6 +137,41 @@ namespace server.Migrations
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
+            migrationBuilder.CreateTable(
+                name: "Postmenus",
+                columns: table => new
+                {
+                    PostmenuId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    CountFood = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    MenuId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    PostId = table.Column<Guid>(type: "char(36)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Postmenus", x => x.PostmenuId);
+                    table.ForeignKey(
+                        name: "FK_Postmenus_Menus_MenuId",
+                        column: x => x.MenuId,
+                        principalTable: "Menus",
+                        principalColumn: "MenuId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Postmenus_Posts_PostId",
+                        column: x => x.PostId,
+                        principalTable: "Posts",
+                        principalColumn: "PostId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Postmenus_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Accepts_PostId",
                 table: "Accepts",
@@ -160,6 +193,21 @@ namespace server.Migrations
                 column: "RestaurantsRestId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Postmenus_MenuId",
+                table: "Postmenus",
+                column: "MenuId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Postmenus_PostId",
+                table: "Postmenus",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Postmenus_UserId",
+                table: "Postmenus",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Posts_UserId",
                 table: "Posts",
                 column: "UserId");
@@ -175,16 +223,19 @@ namespace server.Migrations
                 name: "Carts");
 
             migrationBuilder.DropTable(
-                name: "Posts");
+                name: "Postmenus");
 
             migrationBuilder.DropTable(
                 name: "Menus");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Posts");
 
             migrationBuilder.DropTable(
                 name: "Restaurants");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

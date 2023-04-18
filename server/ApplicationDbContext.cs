@@ -15,5 +15,6 @@ public class ApplicationDbContext : DbContext
     public DbSet<Accept> Accepts { get; set; }
     public DbSet<Menu> Menus { get; set; }
     public DbSet<Post> Posts { get; set; }
+    public DbSet<Postmenu> Postmenus { get; set; }
     public DbSet<Restaurant> Restaurants { get; set; }
 }

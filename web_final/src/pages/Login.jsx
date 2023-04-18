@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <div className="p-14 lg:p-20 w-screen h-screen bg-login bg-cover flex  items-center">
         {/* {JSON.stringify(state)} */}
-        <div className=' bg-amber-300  bg-opacity-60 w-[30rem] p-9 sm:p-16 rounded-2xl ' >
+        <div className=' bg-amber-300 bg-opacity-60 w-[25rem] sm:w-[30rem] p-9 sm:p-16 rounded-2xl ' >
             <div className=' flex justify-between pb-10'>
                 <div>
                     <div className=' flex text-xl font-bold gap-2 pb-1'>
@@ -50,7 +50,7 @@ const Login = () => {
                    
                 </div>
             </div>
-            <form className=' space-y-3 pb-4'>
+            <form onSubmit={()=>confirmLogin()} className=' space-y-3 pb-4'>
                 <div>
                 <div className=' text-sm text-gray-700 font-semibold pb-2'>Username or E-mail</div>
                 <input className='w-full rounded-lg p-2' type="text"
@@ -60,15 +60,16 @@ const Login = () => {
                 <div>
                 <div className='flex justify-between pb-2'>
                     <div className=' text-sm text-gray-700 font-semibold'>Password</div>
-                    <div className=' text-sm text-gray-700 font-semibold'>Forgot Password?</div>
+                    
                 </div>
                 <input className='w-full rounded-lg p-2' type="password" onChange={inputValue("password")}
                 value={password}></input>
                 </div>
                 
+                <input type="submit" className='flex justify-center items-center bg-black rounded-lg 
+                text-white py-3 px-12' value="Sign in" />
             </form>
-            <button className='flex justify-center items-center bg-black rounded-lg 
-            text-white py-3 px-12' onClick={confirmLogin}>Sign in</button>
+            
         </div>
     </div>
   )
