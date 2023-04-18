@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiTrash } from "react-icons/hi";
-import Checkout from "./Checkout";
+import Checkout from "../components/Checkout";
 
 function Cart() {
   
@@ -97,6 +97,7 @@ function Cart() {
             return null
           else
             return(
+              
               <div className="flex justify-center flex-col bg-amber-100 rounded-2xl font-semibold">
                 <img
                   className=" h-40 w-full object-cover rounded-t-xl overflow-hidden"
@@ -140,7 +141,7 @@ function Cart() {
                     </button>
                   </div>
                 </div>
-    
+                       
                 
               </div>
               

@@ -26,7 +26,7 @@ function Restaurant() {
   }, []);
 
   return (
-    <div class="w-screen h-screen bg-base bg-cover  ">
+    <div class="w-screen  bg-base min-h-screen bg-repeat-y bg-cover pb-20">
       <div className=" pt-20 pb-10 font-bold text-xl md:text-2xl lg:text-3xl flex justify-center">
         Restaurant
       </div>

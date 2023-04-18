@@ -34,11 +34,11 @@ function Menu(props) {
   return (
     <div className="pb-10">
             <div className="overflow-hidden rounded-t-2xl " key={props.index}>
-              <div className=" h-40 w-full flex justify-center">
+              <div className="h-40 w-full object-cover rounded-t-xl overflow-hidden bg-white">
                 <img src={props.menu.menuPic} alt={props.menu.menuFood} />
               </div>
             </div>
-            <div className="px-6 py-3 bg-amber-300 rounded-b-2xl">
+            <div className="px-6 py-3  bg-amber-300 rounded-b-2xl">
               <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
                 <div>
                   <h2 className="md:mt-1 md:mx-2 text-mg lg:text-xl font-semibold text-gray-800">

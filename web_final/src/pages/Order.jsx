@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Menu from "./Menu";
+import Menu from "../components/Menu";
 
 function Order() {
   const params = useParams();
@@ -25,11 +25,11 @@ function Order() {
   }, []);
 
   return (
-    <div class="p-9 w-screen h-screen bg-base bg-cover  ">
+    <div class="w-screen  bg-base min-h-screen bg-repeat-y bg-cover pb-20">
       <div className=" pt-20 pb-10 font-bold text-xl md:text-2xl lg:text-3xl flex justify-center">
         Menu
       </div>
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 px-12">
+      <div class="grid grid-cols-1 gap-14 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 px-20">
         {menus.map((menu, index) => (
           <Menu menu={menu} index={index}/>
         ))}

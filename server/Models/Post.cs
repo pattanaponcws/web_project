@@ -11,6 +11,5 @@ public class Post
     public int CountFood { get; set; }
     public int Price { get; set; }
     public User User { get; set; } = null!;
-    public Restaurant Restaurant { get; set; } = null!;
-    public Menu Menu { get; set; } = null!;
+    public String Status { get; set; }
 }

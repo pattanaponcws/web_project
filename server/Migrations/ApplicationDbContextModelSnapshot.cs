@@ -102,23 +102,17 @@ namespace server.Migrations
                     b.Property<int>("CountFood")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("MenuId")
-                        .HasColumnType("char(36)");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("RestaurantRestId")
-                        .HasColumnType("char(36)");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("char(36)");
 
                     b.HasKey("PostId");
-
-                    b.HasIndex("MenuId");
-
-                    b.HasIndex("RestaurantRestId");
 
                     b.HasIndex("UserId");
 
@@ -214,27 +208,11 @@ namespace server.Migrations
 
             modelBuilder.Entity("server.Models.Post", b =>
                 {
-                    b.HasOne("server.Models.Menu", "Menu")
-                        .WithMany()
-                        .HasForeignKey("MenuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("server.Models.Restaurant", "Restaurant")
-                        .WithMany()
-                        .HasForeignKey("RestaurantRestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("server.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Menu");
-
-                    b.Navigation("Restaurant");
 
                     b.Navigation("User");
                 });

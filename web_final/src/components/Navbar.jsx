@@ -8,14 +8,14 @@ const Navbar= () => {
   const paths = [
     { key: 1, name: "Home", path: "/" },
     { key: 2, name: "Orders", path: "/restaurant" },
-    { key: 3, name: "Post", path: "/Post" },
+    { key: 3, name: "Post", path: "/Mc" },
   ];
 
   let [open, setOpen] = useState(false);
 
   return (
     <nav className="shadow-lg w-full fixed top-0 lef-0 ">
-      <div className="md:flex items-center justify-between  py-[1rem] md:px-[6rem] px-[3rem]">
+      <div className="md:flex items-center justify-between bg-white  py-[1rem] md:px-[6rem] px-[3rem]">
       <a href="/">
 
         <div className="font-bold text-2xl cursor-pointer flex items-center  text-orange-600">
@@ -32,8 +32,8 @@ const Navbar= () => {
         </div>
         <ul
           className={` md:flex md:items-center md:pb-0 pb-6 absolute md:static md:z-auto z-[-1] left-0 w-full
-            md:w-auto md:pl-0 pl-12 transition-all ease-in duration-500 md:border-b-0 border-b-2  ${
-              open ? "top-20 opacity-100" : "top-[-490px]"
+            md:w-auto md:pl-0 pl-12 md:bg-transparent bg-white transition-all ease-in duration-500 md:border-b-0 border-b-2  ${
+              open ? "top-10 opacity-100" : "top-[-490px]"
             }`}
         >
           {paths.map((path) => (
