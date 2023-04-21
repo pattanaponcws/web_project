@@ -12,5 +12,6 @@ public class Post
     public String Status { get; set; }
     public String Tel { get; set; }
     public String Address { get; set; }
+    public Restaurant Restaurants { get; set; } = null!;
     
 }
