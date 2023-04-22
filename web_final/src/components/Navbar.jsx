@@ -4,7 +4,7 @@ import { useState } from "react";
 import { HiUser } from "react-icons/hi";
 import { HiShoppingCart } from "react-icons/hi";
 
-const Navbar= () => {
+const Navbar = () => {
   const paths = [
     { key: 1, name: "Home", path: "/" },
     { key: 2, name: "Orders", path: "/restaurant" },
@@ -14,17 +14,15 @@ const Navbar= () => {
   let [open, setOpen] = useState(false);
 
   return (
-    <nav className="shadow-lg w-full fixed top-0 lef-0 ">
+    <nav className="shadow-lg w-full fixed top-0 lef-0 z-50">
       <div className="md:flex items-center justify-between bg-white  py-[1rem] md:px-[6rem] px-[3rem]">
-      <a href="/">
-
-        <div className="font-bold text-2xl cursor-pointer flex items-center  text-orange-600">
-        🥔
-          Potato
-        </div>
-      </a>
+        <a href="/">
+          <div className="font-bold text-2xl cursor-pointer flex items-center  text-orange-600">
+            🥔 Potato
+          </div>
+        </a>
         <div
-          className="text-orange-600 absolute right-8 top-7 text-3xl cursor-pointer md:hidden"
+          className="text-orange-600 absolute right-8 top-5 text-3xl cursor-pointer md:hidden"
           onClick={() => setOpen(!open)}
         >
           {!open && <CgMenu></CgMenu>}
@@ -40,7 +38,11 @@ const Navbar= () => {
             <li key={path.key} className="md:ml-7 md:my-0 my-7">
               <a
                 href={path.path}
-                className=" text-orange-600 hover:text-orange-700 text-xl font-bold duration-500"
+                className={`text-orange-600 hover:text-orange-700 text-xl font-bold duration-1000 ${
+                  open
+                    ? "ml-1 transition transform duration-200 translate-x-15 delay-1000"
+                    : ""
+                }`}
               >
                 {path.name}
               </a>
@@ -48,16 +50,16 @@ const Navbar= () => {
           ))}
           <li className="md:ml-7 md:my-0 my-7">
             <a href="\Cart">
-            <button className="font-bold rounded-full bg-orange-600 text-xl text-white px-5 py-2  hover:bg-orange-700 duration-500">
-            <HiShoppingCart/>
-            </button>
+              <button className="font-bold rounded-full bg-orange-600 text-xl text-white px-5 py-2  hover:bg-orange-700 duration-500">
+                <HiShoppingCart />
+              </button>
             </a>
           </li>
           <li className="md:ml-7 md:my-0 my-7">
             <a href="\Login">
-            <button className="font-bold bg-orange-600 text-xl text-white px-5 py-2 rounded-full hover:bg-orange-700 duration-500">
-            <HiUser/>
-            </button>
+              <button className="font-bold bg-orange-600 text-xl text-white px-5 py-2 rounded-full hover:bg-orange-700 duration-500">
+                <HiUser />
+              </button>
             </a>
           </li>
         </ul>
