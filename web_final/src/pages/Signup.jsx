@@ -5,6 +5,7 @@ import "animate.css";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 const Signup = () => {
+  document.title = "Sing up";
   const [state, setState] = useState({
     email: "",
     username: "",

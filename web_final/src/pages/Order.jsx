@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Menu from "../components/Menu";
 
 function Order() {
+  document.title = "Order";
   const params = useParams();
 
   const [menus, setMenu] = useState([]);
@@ -19,7 +20,7 @@ function Order() {
         console.log(err);
       });
   };
-  
+
   useEffect(() => {
     fetchOrder();
   }, []);
@@ -31,7 +32,7 @@ function Order() {
       </div>
       <div class="grid grid-cols-1 gap-14 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 px-20">
         {menus.map((menu, index) => (
-          <Menu menu={menu} index={index}/>
+          <Menu menu={menu} index={index} />
         ))}
       </div>
     </div>

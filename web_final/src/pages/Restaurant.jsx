@@ -2,11 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiChevronLeftCircle } from "react-icons/bi";
+import OrderCard from "../components/OrderCard";
 
 function Restaurant() {
   const [rests, setRests] = useState([]);
 
   const fetchData = () => {
+    document.title = "Restaurant";
     axios({
       method: "get",
       url: "https://localhost:7057/api/restaurants",
@@ -30,6 +32,7 @@ function Restaurant() {
       <div className=" pt-20 pb-10 font-bold text-xl md:text-2xl lg:text-3xl flex justify-center">
         Restaurant
       </div>
+      <OrderCard />
 
       <div class="grid grid-cols-1 gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 px-10 ">
         {rests.map((rest, index) => (

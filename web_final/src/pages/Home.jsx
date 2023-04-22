@@ -2,6 +2,7 @@ import React from "react";
 import "animate.css";
 
 function Home() {
+  document.title = "Home";
   return (
     <div className="p-9 w-screen h-screen bg-home bg-cover flex lg:px-56 items-center">
       <div className="pt-20 md:mx-10">

@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         res: "#FDE27B",
       },
+      
       backgroundImage: {
         login: "url('assets/login_bg.png')",
         home: "url('assets/home_bg.png')",
