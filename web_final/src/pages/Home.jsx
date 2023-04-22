@@ -6,6 +6,7 @@ function Home() {
   return (
     <div className="p-9 w-screen h-screen bg-home bg-cover flex lg:px-56 items-center">
       <div className="pt-20 md:mx-10">
+        
         <div className="pb-3">
           <div>
             <div className=" flex text-2xl sm:text-3xl lg:text-5xl font-bold gap-2 pb-5">
